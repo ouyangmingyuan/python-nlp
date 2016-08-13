@@ -1,11 +1,14 @@
 #!/usr/bin/env python
-# -*-coding=gbk-*-
+# -*-coding=utf-8-*-
 
 """
 nltk-比较中文文档相似度-完整实例,实用结巴分词
 from:http://my.oschina.net/kakablue/blog/314513
 """
 # 缩水版的courses，实际数据的格式应该为 课程名\t课程简介\t课程详情，并已去除html等干扰因素
+
+from gensim import *
+    
 courses = [           
             u'Writing II: Rhetorical Composing',
             u'Genetics and Society: A Course for Educators',
@@ -93,7 +96,6 @@ def train_by_lsi(lib_texts):
     """
         通过LSI模型的训练
     """
-    from gensim import corpora, models, similarities
 
     # 为了能看到过程日志
     # import logging
